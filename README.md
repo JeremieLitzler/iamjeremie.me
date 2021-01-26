@@ -1,8 +1,8 @@
-# Next + Netlify Markdown Blog Starter
+# Next + Netlify Markdown Blog for [I am Jeremie](https://iamjeremie.me)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8979c7b5-18bf-4837-9861-2d9a5844b19b/deploy-status)](https://app.netlify.com/sites/next-netlify-blog-starter/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a8ab965c-dffc-40ea-9772-353cb25392e8/deploy-status)](https://app.netlify.com/sites/iamjeremie/deploys)
 
-This is a lightweight Next.js (v9.5+) Markdown Blog, configured so you can one-click install a blog and deploy it to [Netlify](https://url.netlify.com/r1j6ybSYU)!
+It uses a lightweight Next.js (v9.5+) Markdown Blog, configured so you can one-click install a blog and deploy it to [Netlify](https://url.netlify.com/r1j6ybSYU)!
 
 Get started by clicking here (this will clone the repo and deploy the site):
 

@@ -25,12 +25,12 @@ const Index = ({ posts, title, description, ...props }) => {
           <a href='https://url.netlify.com/r1j6ybSYU'>Netlify</a>.
         </p>
       </Layout>
-      <style jsx>{`
+      {/*<style jsx>{`
         .title {
           margin: 1rem auto;
           font-size: 3rem;
         }
-      `}</style>
+      `}</style>*/}
     </>
   );
 };

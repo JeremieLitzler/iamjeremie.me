@@ -21,6 +21,7 @@
   --h2: calc(var(--text-size) * 1.6);
   --h3: calc(var(--text-size) * 1.4);
   --h4: calc(var(--text-size) * 1.2);
+  --nav-link-size: calc(var(--text-size) * 1.125);
   /*hover and focus*/
   --scale-start: 1;
   --scale-end: 1.1;
@@ -28,7 +29,7 @@
   --interact-pd: 0.5em;
   --interact-bd-rad: 0.5em;
 }
-
+/*Typography*/
 * {
   /*overwrite chrome default style.*/
   /*I know I need to style :hover and :focus!*/
@@ -57,6 +58,7 @@ h6 {
 
 h1 {
   font-size: var(--h1);
+  text-align: center;
 }
 h2 {
   font-size: var(--h2);
@@ -95,7 +97,6 @@ a:focus {
 
 .post-link {
   list-style: none;
-  padding: 0.5em 0;
 }
 img {
   width: 100%;
@@ -103,21 +104,16 @@ img {
 
 header {
   width: 100%;
-  height: ;
   border-bottom: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 nav {
-  width: calc(100% - 40px);
-  max-width: 1200px;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-family: Montserrat;
+  font-size: var(--nav-link-size);
 }
+
 nav a {
-  margin-right: 20px;
-  text-decoration: none;
+  margin: 0 1em;
 }
 nav a:hover {
   text-decoration: underline;
@@ -145,3 +141,34 @@ footer img {
   padding: 0 5px;
   height: 1rem;
 }
+
+/* Layout */
+
+.layout {
+  max-width: 95vw;
+  margin: 0 auto;
+}
+/* Header and Nav */
+header {
+  height: 3em;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Content */
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+.post-link {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+/* Footer */

@@ -5,7 +5,6 @@ const About = ({ title, description, ...props }) => {
     <>
       <Layout pageTitle={`${title} | Who`} description={description}>
         <h1 className='title'>Hello, I am Jeremie.</h1>
-
         <p className='description'>
           In 2009, I started my career. <br /> From Trust5 in Ireland to
           Conduent in France, I am engaged to improve the daily life of
@@ -25,7 +24,6 @@ const About = ({ title, description, ...props }) => {
           </a>
           . Otherwise, explore my articles!
         </p>
-
         {/*<p>
           You can check out the{' '}
           <a href='https://github.com/cassidoo/next-netlify-blog-starter'>

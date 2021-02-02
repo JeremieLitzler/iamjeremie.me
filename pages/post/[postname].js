@@ -11,7 +11,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
   return (
     <>
       <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-        <div className='back'>
+        <div className='back' role='nav'>
           ←{' '}
           <Link href='/'>
             <a>Back to post list</a>

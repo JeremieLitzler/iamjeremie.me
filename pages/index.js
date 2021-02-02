@@ -7,18 +7,9 @@ const Index = ({ posts, title, description, ...props }) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
-        <h1 className='title'>I write about many topics!</h1>
-
-        <main>
-          <PostList posts={posts} />
-        </main>
+        <h1 className='title'>My articles!</h1>
+        <PostList posts={posts} />
       </Layout>
-      {/*<style jsx>{`
-        .title {
-          margin: 1rem auto;
-          font-size: 3rem;
-        }
-      `}</style>*/}
     </>
   );
 };

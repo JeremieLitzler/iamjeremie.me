@@ -28,3 +28,22 @@ A bullet list:
   - Item 2.1
   - Item 2.2
 - Item 3
+
+Some code:
+
+```js
+window.addEventListener('scroll', function (event) {
+  console.log(event);
+});
+```
+
+> A block quote with ~strikethrough~ and a URL: [See here](https://reactjs.org).
+
+- Lists
+- [ ] todo
+- [x] done
+
+A table:
+
+| a   | b   |
+| --- | --- |

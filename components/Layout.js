@@ -19,26 +19,31 @@ export default function Layout({ children, pageTitle, description, ...props }) {
       </Head>
       <section className='layout'>
         <Header />
-        <div className='content'>{children}</div>
+        <main role='main' className='content'>
+          {children}
+        </main>
+        <footer>
+          <section>
+            <p className='fine-print'>
+              You can look at the repository for this project{' '}
+              <a href='https://github.com/cassidoo/next-netlify-blog-starter'>
+                here
+              </a>
+              , and a tutorial on how to build it {` `}
+              <a href='https://url.netlify.com/ByVW0bCF8'>here</a>.
+            </p>
+            <p className='fine-print'>
+              This site is built with Next, and is easily deployable on{' '}
+              <a href='https://url.netlify.com/r1j6ybSYU'>Netlify</a>.
+            </p>
+            <p className='fine-print'>
+              Built with and served by{' '}
+              <img src='/netliheart.svg' alt='Netlify Heart' />
+            </p>
+          </section>
+        </footer>
       </section>
-      <footer>
-        <p className='fine-print'>
-          You can look at the repository for this project{' '}
-          <a href='https://github.com/cassidoo/next-netlify-blog-starter'>
-            here
-          </a>
-          , and a tutorial on how to build it {` `}
-          <a href='https://url.netlify.com/ByVW0bCF8'>here</a>.
-        </p>
-        <p className='fine-print'>
-          This site is built with Next, and is easily deployable on{' '}
-          <a href='https://url.netlify.com/r1j6ybSYU'>Netlify</a>.
-        </p>
-        <p className='fine-print'>
-          Built with and served by{' '}
-          <img src='/netliheart.svg' alt='Netlify Heart' />
-        </p>
-      </footer>
+      <script src='/static/menu-scroll.js'></script>
     </>
   );
 }

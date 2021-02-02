@@ -47,7 +47,7 @@ The font used is [Inter](https://fonts.google.com/specimen/Inter).
 
 You may include an optional hero image in your posts. Put the images in `public/static/`, and then include in your blog .md file like so:
 
-```
+```md
 ---
 title: 'Post title'
 author: 'Post author'
@@ -57,3 +57,12 @@ hero_image: ../static/example.jpg
 ```
 
 See `demo-post-1.md` for an example of this.
+
+### Dependencies
+
+- [gray-matter](https://www.npmjs.com/package/gray-matter)
+- [next](https://www.npmjs.com/package/next)
+- [raw-loader](https://www.npmjs.com/package/raw-loader)
+- [react](https://www.npmjs.com/package/react)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [react-markdown](https://www.npmjs.com/package/react-markdown)

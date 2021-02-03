@@ -20,7 +20,7 @@ const About = ({ title, description, ...props }) => {
             rel='noopener'
             target='_blank'
           >
-            my resumre here
+            my resume here
           </a>
           . Otherwise, explore my articles!
         </p>

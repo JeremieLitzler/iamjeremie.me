@@ -26,7 +26,10 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           <section>
             <p className='fine-print'>
               You can look at the repository for this project{' '}
-              <a href='https://github.com/cassidoo/next-netlify-blog-starter'>
+              <a
+                href='https://github.com/cassidoo/next-netlify-blog-starter'
+                title="Link to Cassidy's repository"
+              >
                 here
               </a>
               , and a tutorial on how to build it {` `}
@@ -34,7 +37,13 @@ export default function Layout({ children, pageTitle, description, ...props }) {
             </p>
             <p className='fine-print'>
               This site is built with Next, and is easily deployable on{' '}
-              <a href='https://url.netlify.com/r1j6ybSYU'>Netlify</a>.
+              <a
+                href='https://url.netlify.com/r1j6ybSYU'
+                title='Link to the template on Netlify'
+              >
+                Netlify
+              </a>
+              .
             </p>
             <p className='fine-print'>
               Built with and served by{' '}

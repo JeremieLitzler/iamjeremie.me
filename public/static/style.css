@@ -159,7 +159,7 @@ body {
 header,
 main,
 footer {
-  border: 1px red dotted;
+  /* border: 1px red dotted; */
 }
 header {
   grid-area: header;

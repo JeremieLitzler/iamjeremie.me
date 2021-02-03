@@ -47,7 +47,14 @@ export default function Layout({ children, pageTitle, description, ...props }) {
             </p>
             <p className='fine-print'>
               Built with and served by{' '}
-              <img src='/netliheart.svg' alt='Netlify Heart' />
+              <a
+                className='netlify-heart'
+                href='http://netlify.com'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img src='/netliheart.svg' alt='Netlify Heart' />
+              </a>
             </p>
           </section>
         </footer>

@@ -8,10 +8,10 @@
   /*colors*/
   --text-color: #282c37;
   --accent-color: #5c196b;
-  --hover-color: #fffff5;
+  --hover-color: #5c196b;
   --hover-bg-color: #5c196b;
-  --focus-color: #1c140d;
-  --focus-bg-color: #cbe86b;
+  --focus-color: #fffff5;
+  --focus-bg-color: #5c196b;
   --link-color: #0080ff;
   --bd-color: #ffda8e;
   --bg-color: #fffffe;
@@ -26,8 +26,8 @@
   --scale-start: 1;
   --scale-end: 1.05;
   --scale-time: 150ms;
-  --interact-pd: 0.25em;
-  --interact-bd-rad: 0.75em;
+  --interact-pd: 0em;
+  --interact-bd-rad: 0.25em;
   /*layout*/
   --header-offset: 2.5em;
 }
@@ -93,13 +93,16 @@ a:hover {
 }
 a:hover {
   color: var(--hover-color);
-  background-color: var(--hover-bg-color);
+  /* background-color: var(--hover-bg-color); */
 }
 a:focus {
   color: var(--focus-color);
   background-color: var(--focus-bg-color);
 }
 
+.netlify-heart:focus {
+  border-radius: var(--interact-bd-rad);
+}
 .post-link {
   list-style: none;
 }
@@ -131,9 +134,9 @@ pre {
 footer {
   border-top: 1px solid #d9e1e8;
 }
-footer img {
+.netlify-heart img {
   height: 2rem;
-  margin-top: 2em;
+  width: initial;
 }
 .fine-print {
   font-size: calc(var(--text-size) * 0.75);

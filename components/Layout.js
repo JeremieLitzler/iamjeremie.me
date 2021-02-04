@@ -58,7 +58,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           </section>
         </footer>
       </section>
-      <script src='/static/menu-scroll.js'></script>
+      {/* <script src='/static/menu-scroll.js'></script> */}
     </>
   );
 }

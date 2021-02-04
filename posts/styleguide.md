@@ -57,9 +57,10 @@ class Expire extends React.Component {
 export default uniquePropHOC(['time', 'seconds'])(Expire);
 ```
 
-> A block quote with ~strikethrough~ and a URL: [See here](https://reactjs.org).
+> A block quote with ~~strikethrough~~ and a URL: [See here](https://reactjs.org).
 
 A table:
 
-| a   | b   |
-| --- | --- |
+| a                  | b                           | c                      | d                                             | e                         | f       |
+| ------------------ | --------------------------- | ---------------------- | --------------------------------------------- | ------------------------- | ------- |
+| When To Use Tables | tables are for tabular data | When Not To Use Tables | An inappropriate use for tables is for layout | HTML tags hava a meaning. | Period. |

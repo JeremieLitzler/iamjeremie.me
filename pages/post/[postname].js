@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { irBlack } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { render } from 'react-dom';
 
 import Layout from '@components/Layout';
 import getSlugs from '@utils/getSlugs';
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { irBlack } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import gfm from 'remark-gfm';
 
 const renderers = {
   code: ({ language, value }) => {
@@ -37,7 +39,11 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
             />
           )}
           <div>
-            <ReactMarkdown renderers={renderers} source={markdownBody} />
+            <ReactMarkdown
+              renderers={renderers}
+              plugins={[gfm]}
+              source={markdownBody}
+            />
           </div>
         </article>
       </Layout>

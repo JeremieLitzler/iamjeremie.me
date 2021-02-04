@@ -156,7 +156,6 @@ th {
   border: 1px solid var(--text-color);
   padding: 0.5rem;
   overflow: scroll;
-  text-overflow: ellipsis;
 }
 pre {
   white-space: pre-wrap;

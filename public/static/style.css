@@ -155,7 +155,7 @@ td,
 th {
   border: 1px solid var(--text-color);
   padding: 0.5rem;
-  overflow: scroll;
+  overflow-x: scroll;
 }
 pre {
   white-space: pre-wrap;

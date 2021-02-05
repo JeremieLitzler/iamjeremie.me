@@ -1,12 +1,13 @@
 const getSlugs = (context) => {
-  const keys = context.keys()
+  console.log('getting slugs...');
+  const filenames = context.keys();
+  const slugs = filenames.map((filename, index) => {
+    //Remove the ./ and the file extension
+    const slug = filename.replace(/^.*[\\\/]/, '').slice(0, -3);
+    return slug;
+  });
+  console.log(slugs);
+  return slugs;
+};
 
-  const data = keys.map((key, index) => {
-    let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-
-    return slug
-  })
-  return data
-}
-
-export default getSlugs
+export default getSlugs;

@@ -59,10 +59,6 @@ export default uniquePropHOC(['time', 'seconds'])(Expire);
 
 > A block quote with ~~strikethrough~~ and a URL: [See here](https://reactjs.org).
 
-A table:
-
-| a b c e f g h i j  | b                           | c                      | d                                             | e                         | f       |
-| ------------------ | --------------------------- | ---------------------- | --------------------------------------------- | ------------------------- | ------- |
-| When To Use Tables | tables are for tabular data | When Not To Use Tables | An inappropriate use for tables is for layout | HTML tags hava a meaning. | Period. |
+No table supported yet...
 
 Check out the source [on GitHub](https://github.com/JeremieLitzler/iamjeremie.me/blob/master/posts/styleguide.md).

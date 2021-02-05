@@ -61,7 +61,7 @@ export default uniquePropHOC(['time', 'seconds'])(Expire);
 
 A table:
 
-| a                  | b                           | c                      | d                                             | e                         | f       |
+| a b c e f g h i j  | b                           | c                      | d                                             | e                         | f       |
 | ------------------ | --------------------------- | ---------------------- | --------------------------------------------- | ------------------------- | ------- |
 | When To Use Tables | tables are for tabular data | When Not To Use Tables | An inappropriate use for tables is for layout | HTML tags hava a meaning. | Period. |
 

@@ -279,6 +279,44 @@ footer {
   padding: calc(var(--header-offset) - 1em) 0;
 }
 
+/* Responsive tables for smartphone */
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 1200px
+and also iPads specifically.
+*/
+@media (max-width: 75em) {
+  /* Force table to not be like tables anymore */
+  table {
+    display: flex;
+    width: 100%;
+  }
+
+  thead {
+    width: 20%;
+  }
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    position: relative;
+    width: 80%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
 /* Large screen */
 @media (min-width: 36em) {
   nav {

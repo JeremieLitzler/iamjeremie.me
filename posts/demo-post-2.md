@@ -1,7 +1,7 @@
 ---
 title: 'The city of coffee-drinkers'
 author: 'Netlifriends'
-date: '2020-04-28'
+date: 'April 28, 2020'
 category: 'Category 1'
 ---
 

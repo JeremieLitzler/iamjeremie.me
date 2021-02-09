@@ -130,33 +130,15 @@ nav a:hover {
 .title {
   margin: 1em 0;
 }
-
+.post-date {
+  font-style: italic;
+  font-family: console;
+  font-size: calc(var(--text-size) * 0.8);
+}
 li {
   list-style-type: decimal;
 }
 
-del {
-  padding: 0 0.25em;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0 auto;
-  table-layout: fixed;
-  white-space: nowrap;
-  margin-bottom: var(--header-offset);
-}
-thead,
-tbody {
-  width: 100%;
-}
-td,
-th {
-  border: 1px solid var(--text-color);
-  padding: 0.5rem;
-  overflow-x: scroll;
-}
 pre {
   white-space: pre-wrap;
 }
@@ -253,6 +235,7 @@ nav {
   align-items: center;
   /* padding-top: var(--header-offset); */
 }
+
 .posts {
   margin: 0;
   padding: 0;
@@ -268,6 +251,29 @@ nav {
 }
 .post-link:last-child {
   margin-bottom: var(--header-offset);
+}
+
+del {
+  padding: 0 0.25em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin-bottom: var(--header-offset);
+}
+thead,
+tbody {
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid var(--text-color);
+  padding: 0.5rem;
+  overflow-x: scroll;
 }
 /* Footer */
 footer {

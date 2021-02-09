@@ -1,6 +1,6 @@
 import Layout from '@components/Layout';
 //import PostList from '@components/PostList';
-import PostList from '@components/PostListAdvanced';
+import PostListAdvanced from '@components/PostListAdvanced';
 
 import getPosts from '@utils/getPosts';
 
@@ -10,7 +10,7 @@ const Index = ({ postsPerYear, title, description, ...props }) => {
       <Layout pageTitle={title} description={description}>
         <h1 className='title'>My articles!</h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
-        <PostList yearPosts={postsPerYear} />
+        <PostListAdvanced yearPosts={postsPerYear} />
       </Layout>
     </>
   );

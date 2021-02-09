@@ -14,6 +14,7 @@ export default function PostList({ yearPosts }) {
             return (
               <li className='year'>
                 <h2>{year}</h2>
+                {/* render list of post if any */}
                 {!yearPosts[year] && <div>No posts for that year!</div>}
                 <ul className='posts'>
                   {yearPosts[year] &&

@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { render } from 'react-dom';
 
 import Layout from '@components/Layout';
-import getSlugs from '@utils/getSlugs';
+import getSlugs from 'functions/getSlugs';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { irBlack } from 'react-syntax-highlighter/dist/cjs/styles/prism';

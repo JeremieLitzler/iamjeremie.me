@@ -1,5 +1,5 @@
 import matter from 'gray-matter';
-
+import boostFrontMatter from 'functions/getMetas';
 /**
  * Extract the data for the markdown files.
  * @param {Object} context The NextJS context
@@ -14,8 +14,9 @@ function extractPostData(context) {
     let slug = postFileName.replace(/^.*[\\\/]/, '').slice(0, -3);
     const postContent = postsContent[postIndex];
     const document = matter(postContent.default);
+    const newFrontMatter = boostFrontMatter(document.data, postFileName);
     const post = {
-      frontmatter: document.data,
+      frontmatter: newFrontMatter,
       markdownBody: document.content,
       slug,
     };
@@ -76,15 +77,18 @@ function groupPosts(posts) {
   return yearGroups;
 }
 
-const getPosts = (context) => {
+const getPosts = (context, doGroupBy = true) => {
   const rawPosts = extractPostData(context);
   chunckPosts(rawPosts);
   const sortedData = sortPosts(rawPosts);
-  const postsPerYear = groupPosts(sortedData);
-  //console.log('postsPerYear', postsPerYear);
-  return postsPerYear;
+
+  if (doGroupBy) {
+    const postsPerYear = groupPosts(sortedData);
+    //console.log('postsPerYear', postsPerYear);
+    return postsPerYear;
+  }
   //console.log('sortedData', sortedData);
-  //return sortedData;
+  return sortedData;
 };
 
 export default getPosts;

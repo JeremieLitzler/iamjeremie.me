@@ -1,11 +1,15 @@
 import matter from 'gray-matter';
-import boostFrontMatter from 'functions/getMetas';
+import boostFrontMatter from '@functions/boostFrontMatter';
+import groupBy from '@functions/groupBy';
+import sortBy from '@functions/sortBy';
+
+const dateSeperator = ' ';
 /**
  * Extract the data for the markdown files.
  * @param {Object} context The NextJS context
  * @returns {Array} The post raw data
  */
-function extractPostData(context) {
+const extractPostData = (context) => {
   console.log('extracting data from markdown...');
   const postFileNames = context.keys();
   const postsContent = postFileNames.map(context);
@@ -14,7 +18,11 @@ function extractPostData(context) {
     let slug = postFileName.replace(/^.*[\\\/]/, '').slice(0, -3);
     const postContent = postsContent[postIndex];
     const document = matter(postContent.default);
-    const newFrontMatter = boostFrontMatter(document.data, postFileName);
+    const newFrontMatter = boostFrontMatter(
+      document.data,
+      postFileName,
+      'category',
+    );
     const post = {
       frontmatter: newFrontMatter,
       markdownBody: document.content,
@@ -22,7 +30,7 @@ function extractPostData(context) {
     };
     return post;
   });
-}
+};
 /**
  * chunk the post.frontmatter.date into a
  *   - dayNumber
@@ -32,58 +40,27 @@ function extractPostData(context) {
  * @param {Array} posts List of posts
  * @returns {Array} The updated posts the date chunks
  */
-function chunckPosts(posts) {
+const chunckDatePosts = (posts) => {
   console.log('chunk post dates...');
   const chunkedPosts = posts.map((post) => {
-    const [postDay, postYear] = post.frontmatter.date.split(',');
-    const [postDayNumber, postMonth] = postDay.split(' ');
-    post.dayNumber = postDayNumber;
-    post.month = postMonth;
+    const [postDay, postMonth, postYear] = post.frontmatter.date.split(
+      dateSeperator,
+    );
+    // post.day = postDay;
+    // post.month = postMonth;
     post.year = postYear.trim();
-    post.day = postDay;
+    post.timestamp = Date.parse(post.frontmatter.date);
+    console.log(post.title, post.timestamp, post.frontmatter.date);
   });
   return chunkedPosts;
-}
-
-/**
- * Sort chronologically the posts on post.year
- * @param {Array} posts List of posts
- * @returns {Array} The sorted array of posts
- */
-function sortPosts(posts) {
-  console.log('sorting...');
-  const sortedPosts = posts.sort((currentPost, nextPost) =>
-    currentPost.year < nextPost.year ? 1 : -1,
-  );
-  return sortedPosts;
-}
-
-/**
- * Group by year the posts
- * @param {Array} posts The posts
- * @returns {Array} The years array with the related posts as children.
- */
-function groupPosts(posts) {
-  console.log('group posts by year...');
-  const yearKey = 'year';
-  const monthKey = 'month';
-  const yearGroups = posts.reduce((output, element) => {
-    const group = element[yearKey];
-    output[group] = output[group] || [];
-    output[group].push(element);
-    return output;
-  }, {});
-  //console.log(yearGroups);
-  return yearGroups;
-}
+};
 
 const getPosts = (context, doGroupBy = true) => {
   const rawPosts = extractPostData(context);
-  chunckPosts(rawPosts);
-  const sortedData = sortPosts(rawPosts);
+  chunckDatePosts(rawPosts);
 
   if (doGroupBy) {
-    const postsPerYear = groupPosts(sortedData);
+    const postsPerYear = groupBy(sortBy(rawPosts, ['timestamp'], true), 'year');
     //console.log('postsPerYear', postsPerYear);
     return postsPerYear;
   }

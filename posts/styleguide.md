@@ -1,7 +1,7 @@
 ---
 title: 'A style guide of the site (H1)'
 author: 'Jeremie Litzler'
-date: 'January 28, 2021'
+date: '28 Jan 2021'
 category: 'Web development'
 ---
 

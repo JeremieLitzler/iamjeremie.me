@@ -1,7 +1,7 @@
 ---
 title: 'The city of introverts'
 author: 'Jeremie Litzler'
-date: 'October 27, 2020'
+date: '27 Oct 2020'
 category: 'Category 1'
 ---
 

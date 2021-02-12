@@ -85,6 +85,7 @@ a {
   transform: scale(var(--scale-start));
   transition: transform var(--scale-time);
   display: inline-block;
+  text-align: center;
 }
 a:focus,
 a:hover {
@@ -324,7 +325,7 @@ td:before {
     justify-content: flex-end;
   }
   .nav-link {
-    margin: 0 0 0 0.5em;
+    margin: 0 0 0 1.5em;
   }
 
   .posts {
@@ -340,9 +341,10 @@ td:before {
     grid-column: 3;
   }
 
-  main p {
+  /*This cause to have links to be glued to the texts of a p element they are in...*/
+  /* main p {
     display: flex;
-  }
+  } */
   p img {
     justify-self: center;
     width: 20em;

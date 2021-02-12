@@ -1,8 +1,8 @@
 ---
 title: 'The city of hipsters'
 author: 'Netlifriends'
-date: 'April 27, 2020'
-hero_image: ../static/milkovi-seattle-unsplash.jpg
+date: '27 Apr 2020'
+hero_image: ../static/images/milkovi-seattle-unsplash.jpg
 category: 'Uncategorized (with brakets)'
 ---
 

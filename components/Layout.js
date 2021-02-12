@@ -24,26 +24,43 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <footer>
           <section>
             <p className='fine-print'>
-              You can look at the repository for this project{' '}
+              This site is built {''}
+              <a
+                href='https://url.netlify.com/ByVW0bCF8'
+                target='_blank'
+                rel='noreferrer'
+              >
+                from my GitHub repository
+              </a>
+              {''} with Next, and is easily{' '}
+              <a
+                href='https://url.netlify.com/r1j6ybSYU'
+                target='_blank'
+                rel='noreferrer'
+              >
+                deployable on Netlify
+              </a>
+              .
+            </p>
+            <p className='fine-print'>
+              You can look at{' '}
               <a
                 href='https://github.com/cassidoo/next-netlify-blog-starter'
                 title="Link to Cassidy's repository"
               >
-                here
+                the original project of Cassidy Williams on GitHub
               </a>
-              , and a tutorial on how to build it {` `}
-              <a href='https://url.netlify.com/ByVW0bCF8'>here</a>.
-            </p>
-            <p className='fine-print'>
-              This site is built with Next, and is easily deployable on{' '}
+              , and {''}
               <a
-                href='https://url.netlify.com/r1j6ybSYU'
-                title='Link to the template on Netlify'
+                href='https://url.netlify.com/ByVW0bCF8'
+                target='_blank'
+                rel='noreferrer'
               >
-                Netlify
-              </a>
-              .
+                her Netlify blog post
+              </a>{' '}
+              on how to build it.
             </p>
+
             <p className='fine-print'>
               Built with and served by{' '}
               <a
@@ -52,7 +69,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
                 target='_blank'
                 rel='noreferrer'
               >
-                <img src='/netliheart.svg' alt='Netlify Heart' />
+                <img src='/netliheart.svg' alt='A Netlify Heart' />
               </a>
             </p>
           </section>

@@ -1,5 +1,5 @@
 import matter from 'gray-matter';
-import boostFrontMatter from '@functions/boostFrontMatter';
+import getCategorySlug from '@functions/getCategorySlug';
 import groupBy from '@functions/groupBy';
 
 const dateSeperator = ' ';
@@ -17,15 +17,16 @@ const extractPostData = (context) => {
     let slug = postFileName.replace(/^.*[\\\/]/, '').slice(0, -3);
     const postContent = postsContent[postIndex];
     const document = matter(postContent.default);
-    const newFrontMatter = boostFrontMatter(
+    const categorySlug = getCategorySlug(
       document.data,
       postFileName,
       'category',
     );
     const post = {
-      frontmatter: newFrontMatter,
+      frontmatter: document.data,
       markdownBody: document.content,
       slug,
+      categorySlug,
     };
     return post;
   });
@@ -64,7 +65,7 @@ const getPosts = (context, doGroupBy = true) => {
     return postsPerYear;
   }
   //console.log('sortedData', sortedData);
-  return sortedData;
+  return rawPosts;
 };
 
 export default getPosts;

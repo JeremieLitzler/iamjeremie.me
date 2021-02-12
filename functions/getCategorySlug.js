@@ -1,15 +1,14 @@
-const boostFrontMatter = (
+const getCategorySlug = (
   rawFrontMatter,
   postFileName,
   metaKey = 'no-key-given',
 ) => {
-  const newFrontMatter = Object.assign({}, rawFrontMatter);
   if (rawFrontMatter[metaKey] === undefined) {
     //skip if no meta
     console.warn(
       `Post doesn't contain a <${metaKey}> to boostFrontMatter. See post ${postFileName}`,
     );
-    return rawFrontMatter;
+    return 'uncategorized';
   }
   //check category doesn't contain any special character
   //category should be made of alphanumeric characters and space only
@@ -23,8 +22,7 @@ const boostFrontMatter = (
   const regex = /[\[\(\)\]\ ]+/g;
   slug = slug.replace(regex, '-').replace(/-$/, ''); //remove trailing dash if any
   console.log(slug);
-  newFrontMatter['categorySlug'] = slug;
-  return newFrontMatter;
+  return slug;
 };
 
-export default boostFrontMatter;
+export default getCategorySlug;

@@ -1,13 +1,19 @@
 import Layout from '@components/Layout';
 import PostList from '@components/PostList';
 
-import getPosts from 'functions/getPosts';
+import getPosts from '@functions/getPosts';
+import getSlugs from '@functions/getSlugs';
+import groupBy from '@functions/groupBy';
 
-const CategoryPage = ({ posts, title, description, ...props }) => {
+const categoryPosts = ((context) => {
+  return groupBy(getPosts(context, false), 'categorySlug');
+})(require.context('../../posts', true, /\.md$/));
+
+const CategoryPage = ({ title, description, category, posts, ...props }) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
-        <h1 className='title'>My articles!</h1>
+        <h1 className='title'>My articles about {category}!</h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
         <PostList posts={posts} />
       </Layout>
@@ -17,31 +23,33 @@ const CategoryPage = ({ posts, title, description, ...props }) => {
 
 export default CategoryPage;
 
-export async function getStaticProps() {
-  const configData = await import(`../../siteconfig.json`);
+export async function getStaticProps({ ...ctx }) {
+  const { category } = ctx.params;
+  let posts = [];
+  if (categoryPosts[category]) {
+    posts = categoryPosts[category];
+  }
 
-  const posts = ((context) => {
-    return getPosts(context, false);
-  })(require.context('../../posts', true, /\.md$/));
-  //console.log(posts);
-  const filteredPosts = posts.filter(
-    (post) => post.frontmatter.category === 'Category 1',
-  );
+  const config = await import(`../../siteconfig.json`);
+
   return {
     props: {
-      filteredPosts,
-      title: configData.default.title,
-      description: configData.default.description,
+      title: config.title,
+      description: `Posts of ${category}`,
+      category,
+      posts,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const blogSlugs = ((context) => {
-    return getSlugs(context);
+  const posts = ((context) => {
+    return getPosts(context, false);
   })(require.context('../../posts', true, /\.md$/));
 
-  const paths = blogSlugs.map((slug) => `/post/${slug}`);
+  const paths = Object.keys(categoryPosts)
+    .filter((category) => category !== undefined)
+    .map((category) => `/category/${category}`);
 
   return {
     paths, // An array of path names, and any params

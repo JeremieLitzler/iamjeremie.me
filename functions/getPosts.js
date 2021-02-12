@@ -1,7 +1,6 @@
 import matter from 'gray-matter';
 import boostFrontMatter from '@functions/boostFrontMatter';
 import groupBy from '@functions/groupBy';
-import sortBy from '@functions/sortBy';
 
 const dateSeperator = ' ';
 /**
@@ -60,7 +59,7 @@ const getPosts = (context, doGroupBy = true) => {
   chunckDatePosts(rawPosts);
 
   if (doGroupBy) {
-    const postsPerYear = groupBy(sortBy(rawPosts, ['timestamp'], true), 'year');
+    const postsPerYear = groupBy(rawPosts, 'year');
     //console.log('postsPerYear', postsPerYear);
     return postsPerYear;
   }

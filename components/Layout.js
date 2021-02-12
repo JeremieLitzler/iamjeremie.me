@@ -60,7 +60,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
               </a>{' '}
               on how to build it.
             </p>
-
             <p className='fine-print'>
               Built with and served by{' '}
               <a

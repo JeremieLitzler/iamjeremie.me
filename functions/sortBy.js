@@ -20,11 +20,11 @@ const checkArray = (array, sortingKeys) => {
  * Sort elements according to criteria
  * @param {Array} array List of elements
  * @param {String} sortingKeys The attribute names to find in the element
- * @returns {Array} The sorted array of attr1s
+ * @returns {Array} The sorted array of elements
  */
 const sortBy = (array, sortingKeys, newestOrdering = false) => {
   checkArray(array, sortingKeys);
-  if (!newestOrdering) {
+  if (newestOrdering) {
     console.log('sorting newest to oldest...');
     return array.sort((currentEl, nextEl) =>
       currentEl.timestamp < nextEl.timestamp ? 1 : -1,

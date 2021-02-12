@@ -1,22 +1,25 @@
 import Link from 'next/link';
+import sortBy from '@functions/sortBy';
 
 export default function PostList({ posts }) {
   if (posts === 'undefined') return null;
 
+  const sortedPosts = sortBy(posts, ['timestamp'], true);
+  console.table(sortedPosts);
   return (
     <div>
-      {!posts && <div>No posts!</div>}
+      {!sortedPosts && <div>No posts!</div>}
       <ul className='posts'>
-        {posts &&
-          posts.map((post) => {
+        {sortedPosts &&
+          sortedPosts.map((post) => {
             return (
               <li className='post-link' key={post.slug}>
-                <span className='post-date'>
-                  {post.frontmatter.date}: {` `}
-                </span>
                 <Link href={{ pathname: `/post/${post.slug}` }}>
                   <a>{post?.frontmatter?.title}</a>
                 </Link>
+                <span className='post-date'>
+                  {post.frontmatter.date} {` `}
+                </span>
               </li>
             );
           })}

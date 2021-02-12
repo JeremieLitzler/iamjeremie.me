@@ -18,11 +18,11 @@ const CategoryPage = ({ posts, title, description, ...props }) => {
 export default CategoryPage;
 
 export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`);
+  const configData = await import(`../../siteconfig.json`);
 
   const posts = ((context) => {
     return getPosts(context, false);
-  })(require.context('../posts', true, /\.md$/));
+  })(require.context('../../posts', true, /\.md$/));
   //console.log(posts);
   const filteredPosts = posts.filter(
     (post) => post.frontmatter.category === 'Category 1',

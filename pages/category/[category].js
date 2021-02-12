@@ -35,3 +35,16 @@ export async function getStaticProps() {
     },
   };
 }
+
+export async function getStaticPaths() {
+  const blogSlugs = ((context) => {
+    return getSlugs(context);
+  })(require.context('../../posts', true, /\.md$/));
+
+  const paths = blogSlugs.map((slug) => `/post/${slug}`);
+
+  return {
+    paths, // An array of path names, and any params
+    fallback: false, // so that 404s properly appear if something's not matching
+  };
+}

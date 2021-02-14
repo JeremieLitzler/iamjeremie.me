@@ -2,7 +2,7 @@
 title: 'How to enable debugging in Nodejs project in VSC'
 author: 'Jeremie Litzler'
 date: '12 Feb 2021'
-category: 'Web development'
+category: 'Web development, Guides'
 tag: 'NodeJS, Visual Studio Code'
 ---
 

@@ -2,7 +2,7 @@
 title: 'The city of coffee-drinkers'
 author: 'Netlifriends'
 date: '28 Apr 2020'
-category: 'Category 1'
+category: 'Category 1,Sample'
 ---
 
 ## What even is Seattle?

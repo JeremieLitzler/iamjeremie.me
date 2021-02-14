@@ -3,19 +3,23 @@ import PostList from '@components/PostList';
 
 import getPosts from '@functions/getPosts';
 import getSlugs from '@functions/getSlugs';
+import getSlug from '@functions/getSlug';
+import filterBy from '@functions/filterBy';
 import groupBy from '@functions/groupBy';
 
-const categoryPosts = ((context) => {
-  return groupBy(getPosts(context, false), 'categorySlug');
-})(require.context('../../posts', true, /\.md$/));
-
-const CategoryPage = ({ title, description, category, posts, ...props }) => {
+const CategoryPage = ({
+  title,
+  description,
+  category,
+  categoryPosts,
+  ...props
+}) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
         <h1 className='title'>My articles about {category}!</h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
-        <PostList posts={posts} />
+        <PostList posts={categoryPosts} />
       </Layout>
     </>
   );
@@ -25,11 +29,11 @@ export default CategoryPage;
 
 export async function getStaticProps({ ...ctx }) {
   const { category } = ctx.params;
-  let posts = [];
-  if (categoryPosts[category]) {
-    posts = categoryPosts[category];
-  }
+  const posts = ((context) => {
+    return getPosts(context);
+  })(require.context('../../posts', true, /\.md$/));
 
+  const categoryPosts = filterBy(posts, 'categoryChunks', 'array', category);
   const config = await import(`../../siteconfig.json`);
 
   return {
@@ -37,7 +41,7 @@ export async function getStaticProps({ ...ctx }) {
       title: config.title,
       description: `Posts of ${category}`,
       category,
-      posts,
+      categoryPosts,
     },
   };
 }
@@ -47,9 +51,9 @@ export async function getStaticPaths() {
     return getPosts(context, false);
   })(require.context('../../posts', true, /\.md$/));
 
-  const paths = Object.keys(categoryPosts)
+  const paths = Object.keys(groupBy(posts, 'categoryChunks'))
     .filter((category) => category !== undefined)
-    .map((category) => `/category/${category}`);
+    .map((category) => `/category/${getSlug(category)}`);
 
   return {
     paths, // An array of path names, and any params

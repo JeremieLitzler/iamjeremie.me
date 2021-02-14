@@ -4,7 +4,9 @@ import ReactMarkdown from 'react-markdown';
 import { render } from 'react-dom';
 
 import Layout from '@components/Layout';
-import getSlugs from 'functions/getSlugs';
+import getSlugs from '@functions/getSlugs';
+import getSlug from '@functions/getSlug';
+import uriPath from '@enums/uriPath';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { irBlack } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -30,7 +32,19 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
           </Link>
         </div>
         <article>
-          <h1>{frontmatter.title}</h1>
+          <h1 className='post-page-title'>{frontmatter.title}</h1>
+          <p className='categories'>
+            {frontmatter.category.split(',').map((category) => {
+              return (
+                <Link
+                  className='category'
+                  href={{ pathname: `${uriPath.category}${getSlug(category)}` }}
+                >
+                  <a>{category}</a>
+                </Link>
+              );
+            })}
+          </p>
           {frontmatter.hero_image && (
             <img
               src={frontmatter.hero_image}

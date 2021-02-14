@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import sortBy from '@functions/sortBy';
+import uriPath from '@enums/uriPath';
 
 export default function PostList({ posts }) {
   if (posts === 'undefined') return null;
@@ -14,7 +15,7 @@ export default function PostList({ posts }) {
           sortedPosts.map((post) => {
             return (
               <li className='post-link' key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
+                <Link href={{ pathname: `${uriPath.post}${post.slug}` }}>
                   <a>{post?.frontmatter?.title}</a>
                 </Link>
                 <span className='post-date'>

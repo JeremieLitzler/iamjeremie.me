@@ -6,11 +6,14 @@
 const checkArray = (array, sortingKeys) => {
   array.map((element) => {
     sortingKeys.map((key) => {
-      if (element[key] === undefined || element[key] === null)
+      if (
+        element.frontmatter[key] === undefined ||
+        element.frontmatter[key] === null
+      )
         throw new Error(`
                   <${key}> doesn't exist. 
                   Object contains these attributes: 
-                  ${Object.keys(element)
+                  ${Object.keys(element.frontmatter)
                     .map((key) => `${key}`)
                     .join(', ')}`);
     });
@@ -18,21 +21,23 @@ const checkArray = (array, sortingKeys) => {
 };
 /**
  * Sort elements according to criteria
- * @param {Array} array List of elements
+ * @param {Array} posts List of elements
  * @param {String} sortingKeys The attribute names to find in the element
  * @returns {Array} The sorted array of elements
  */
-const sortBy = (array, sortingKeys, newestOrdering = false) => {
-  checkArray(array, sortingKeys);
+const sortBy = (posts, sortingKeys, newestOrdering = false) => {
+  checkArray(posts, sortingKeys);
   if (newestOrdering) {
-    console.log('sorting newest to oldest...');
-    return array.sort((currentEl, nextEl) =>
-      currentEl.timestamp < nextEl.timestamp ? 1 : -1,
+    //console.log('sorting newest to oldest...');
+    return posts.sort((currentPost, nextPost) =>
+      currentPost.frontmatter.timestamp < nextPost.frontmatter.timestamp
+        ? 1
+        : -1,
     );
   }
-  console.log('sorting oldest to newest...');
-  return array.sort((currentEl, nextEl) =>
-    currentEl.timestamp > nextEl.timestamp ? 1 : -1,
+  //console.log('sorting oldest to newest...');
+  return posts.sort((currentEl, nextEl) =>
+    currentEl.frontmatter.timestamp > nextEl.frontmatter.timestamp ? 1 : -1,
   );
 };
 export default sortBy;

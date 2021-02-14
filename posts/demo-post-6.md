@@ -2,7 +2,7 @@
 title: 'The city of introverts'
 author: 'Jeremie Litzler'
 date: '20 Jan 2021'
-category: 'Category 9'
+category: 'Category 9,Sample'
 ---
 
 ## Are Seattleites dangerous?

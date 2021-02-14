@@ -3,6 +3,7 @@ import Layout from '@components/Layout';
 import GroupedPostList from '@components/GroupedPostList';
 
 import getPosts from 'functions/getPosts';
+import groupBy from '@functions/groupBy';
 
 const Index = ({ years, title, description, ...props }) => {
   return (
@@ -22,7 +23,7 @@ export async function getStaticProps() {
   const configData = await import(`../siteconfig.json`);
 
   const years = ((context) => {
-    return getPosts(context);
+    return groupBy(getPosts(context), 'year');
   })(require.context('../posts', true, /\.md$/));
   //console.log(postsPerYear);
   return {

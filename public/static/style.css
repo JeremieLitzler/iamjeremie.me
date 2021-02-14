@@ -138,6 +138,17 @@ nav a:hover {
   font-family: console;
   font-size: calc(var(--text-size) * 0.8);
 }
+.post-page-title {
+  margin-bottom: 0.5rem;
+}
+.categories {
+  text-align: center;
+}
+.categories a {
+  font-style: italic;
+  margin: 0.5em;
+}
+
 li {
   list-style-type: decimal;
 }

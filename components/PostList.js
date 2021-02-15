@@ -6,7 +6,7 @@ export default function PostList({ posts }) {
   if (posts === 'undefined') return null;
 
   const sortedPosts = sortBy(posts, ['timestamp'], true);
-  console.table(sortedPosts);
+  //console.table(sortedPosts);
   return (
     <div>
       {!sortedPosts && <div>No posts!</div>}

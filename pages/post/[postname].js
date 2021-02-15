@@ -34,17 +34,18 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         <article>
           <h1 className='post-page-title'>{frontmatter.title}</h1>
           <p className='categories'>
-            {frontmatter.category.split(',').map((category) => {
-              return (
-                <Link
-                  className='category'
-                  href={{ pathname: `${uriPath.category}${getSlug(category)}` }}
-                >
-                  <a>{category}</a>
-                </Link>
-              );
-            })}
+            <span className='title'>Found in: </span>
+            {frontmatter.category.split(',').map((category, index) => [
+              index > 0 && ', ',
+              <Link
+                className='category'
+                href={{ pathname: `${uriPath.category}${getSlug(category)}` }}
+              >
+                <a>{category}</a>
+              </Link>,
+            ])}
           </p>
+          <hr></hr>
           {frontmatter.hero_image && (
             <img
               src={frontmatter.hero_image}

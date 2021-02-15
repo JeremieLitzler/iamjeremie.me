@@ -1,10 +1,14 @@
 ---
-title: 'How to enable debugging in Nodejs project in VSC'
+title: 'How to enable debugging on a Nodejs project in VSC'
 author: 'Jeremie Litzler'
 date: '12 Feb 2021'
 category: 'Web development, Guides'
 tag: 'NodeJS, Visual Studio Code'
 ---
+
+Debugging is the life of any developper. It allows you to check when your code doesn't behave... because you gave it the wrong instructions.
+
+Let's dive into how to enable it in Visual Studio Code. It will be quick.
 
 ## Pre-requisites
 

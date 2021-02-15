@@ -1,3 +1,6 @@
+/**********************************************************************
+/*  CSS Variables
+/***********************************************************************/
 :root {
   /*
     bg: background
@@ -32,7 +35,9 @@
   /*layout*/
   --header-offset: 2.5em;
 }
-/*Typography*/
+/**********************************************************************
+/*  Typography - Native elements
+/***********************************************************************/
 * {
   /*overwrite chrome default style.*/
   /*I know I need to style :hover and :focus!*/
@@ -108,10 +113,6 @@ a:focus {
   background-color: var(--focus-bg-color);
 }
 
-.netlify-heart:focus {
-  border-radius: var(--interact-bd-rad);
-}
-
 img {
   width: 100%;
 }
@@ -131,6 +132,23 @@ nav a:hover {
   text-decoration: underline;
 }
 
+li {
+  list-style-type: decimal;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+code {
+  white-space: pre-wrap !important;
+}
+footer {
+  border-top: 1px solid #d9e1e8;
+}
+
+/**********************************************************************
+/*  Typography - Content specific
+/***********************************************************************/
 .year,
 .post-link {
   list-style: none;
@@ -141,6 +159,9 @@ nav a:hover {
 }
 .title {
   margin: 1em 0;
+}
+.title-about {
+  align-self: center;
 }
 .post-date {
   font-style: italic;
@@ -155,23 +176,15 @@ nav a:hover {
   font-style: italic;
 }
 
-li {
-  list-style-type: decimal;
-}
-
-pre {
-  white-space: pre-wrap;
-}
-code {
-  white-space: pre-wrap !important;
-}
-footer {
-  border-top: 1px solid #d9e1e8;
-}
 .netlify-heart img {
   height: 2rem;
   width: initial;
 }
+
+.netlify-heart:focus {
+  border-radius: var(--interact-bd-rad);
+}
+
 .fine-print {
   font-size: calc(var(--text-size) * 0.75);
   text-align: center;
@@ -180,8 +193,10 @@ footer {
   margin-bottom: 0;
 }
 
-/* -- Layout -- */
-/* Header and Nav */
+/**********************************************************************
+/**********************************************************************
+/*  Layout - Header and Nav
+/***********************************************************************/
 header {
   height: var(--header-offset);
   display: flex;
@@ -216,40 +231,9 @@ nav {
   margin: 0 0.5em 0;
 }
 
-/* Content */
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* padding-top: var(--header-offset); */
-}
-main,
-footer section {
-  margin: 0 1em;
-}
-
-.years,
-.posts {
-  margin: 0;
-  padding: 0;
-}
-.posts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.post-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.125em;
-}
-.post-link:last-child {
-  margin-bottom: var(--header-offset);
-}
+/**********************************************************************
+/*  Layout - Content
+/***********************************************************************/
 
 del {
   padding: 0 0.25em;
@@ -273,7 +257,48 @@ th {
   padding: 0.5rem;
   overflow-x: scroll;
 }
-/* Footer */
+main,
+footer section {
+  margin: 0 1em;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* padding-top: var(--header-offset); */
+}
+
+.years,
+.posts {
+  margin: 0;
+  padding: 0;
+}
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.125em;
+}
+.post-link:last-child {
+  margin-bottom: var(--header-offset);
+}
+
+.profile-pic {
+  width: 10em;
+  margin: 0 auto;
+  border-radius: 50em;
+}
+/**********************************************************************
+/*  Layout - Footer
+/***********************************************************************/
 footer {
   width: 100%;
   display: flex;
@@ -283,8 +308,10 @@ footer {
   padding: calc(var(--header-offset) - 1em) 0;
 }
 
-/* Responsive tables for everyone */
-/* Force table to not be like tables anymore */
+/**********************************************************************
+/* Responsive tables for everyone
+/* Force table to not be like tables anymore
+/***********************************************************************/
 table {
   display: flex;
   width: 100%;
@@ -315,7 +342,9 @@ td:before {
   white-space: nowrap;
 }
 
-/* Large screen */
+/**********************************************************************
+/* Media queries
+/***********************************************************************/
 @media (min-width: 36em) {
   .layout {
     display: grid;

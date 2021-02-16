@@ -37,6 +37,7 @@ const parsePostData = (context) => {
 const chunckPostsDate = (posts) => {
   //console.log('chunk post dates...');
   const chunkedPosts = posts.map((post) => {
+    console.table(post.frontmatter);
     const [postDay, postMonth, postYear] = post.frontmatter.date.split(
       dateSeperator,
     );

@@ -1,5 +1,6 @@
 import matter from 'gray-matter';
 import groupBy from '@functions/groupBy';
+import chunkMetada from './chunkMetadata';
 
 const dateSeperator = ' ';
 const metaSeperator = ',';
@@ -37,7 +38,6 @@ const parsePostData = (context) => {
 const chunckPostsDate = (posts) => {
   //console.log('chunk post dates...');
   const chunkedPosts = posts.map((post) => {
-    console.table(post.frontmatter);
     const [postDay, postMonth, postYear] = post.frontmatter.date.split(
       dateSeperator,
     );
@@ -50,34 +50,9 @@ const chunckPostsDate = (posts) => {
   return chunkedPosts;
 };
 
-/**
- * Chunk the posts's attributes given
- * @param {Array} posts List of posts
- * @param {Array} keys The attributes to chunk
- * @returns {Array} The updated posts
- */
-const chunckPostsBy = (posts, keys) => {
-  //console.log('chunk post dates...');
-  const chunkedPosts = posts.map((post) => {
-    for (const key of keys) {
-      if (!post.frontmatter[key]) {
-        console.info(
-          `${key} isn't found in frontmatter of ${post.frontmatter.title}`,
-        );
-        continue;
-      }
-      const values = post.frontmatter[key].split(metaSeperator);
-      //console.table(key, values);
-      post.frontmatter[`${key}Chunks`] = values;
-    }
-  });
-  return chunkedPosts;
-};
-
 const getPosts = (context) => {
   const rawPosts = parsePostData(context);
   chunckPostsDate(rawPosts);
-  chunckPostsBy(rawPosts, ['category', 'tag']);
   return rawPosts;
 };
 

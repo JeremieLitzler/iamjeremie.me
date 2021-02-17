@@ -1,4 +1,5 @@
 import getSlug from '@functions/getSlug';
+import chunkMetada from './chunkMetadata';
 
 const filterBy = (posts, filterKey, filterType = '', filter = '') => {
   if (filterType === '')
@@ -8,8 +9,9 @@ const filterBy = (posts, filterKey, filterType = '', filter = '') => {
   if (filterType === 'array') {
     const postMatches = [];
     for (const post of posts) {
-      if (!post.frontmatter[filterKey]) continue;
-      const postIsMatch = post.frontmatter[filterKey].some(
+      const chunkedFilterData = chunkMetada(post.frontmatter[filterKey]);
+      if (!chunkedFilterData) continue;
+      const postIsMatch = chunkedFilterData.some(
         (element) => getSlug(element) === filter,
       );
       if (!postIsMatch) continue;

@@ -1,6 +1,8 @@
-import getSlug from '@functions/getSlug';
 import Link from 'next/link';
 import { render } from 'react-dom';
+
+import getSlug from '@functions/getSlug';
+import chunkMetada from '@functions/chunkMetadata';
 
 export default function MetaBlock({
   frontmatter,
@@ -10,12 +12,16 @@ export default function MetaBlock({
   uriRoot,
   filter,
 }) {
+  console.log(frontmatter);
+  const chunkedMetadata = chunkMetada(frontmatter[frontmatterAttr]);
+  console.log(chunkedMetadata);
+  if (!chunkedMetadata) return <></>;
+
   return (
     <>
-      {!frontmatter[frontmatterAttr] && <></>}
       <p className={blockClass}>
-        <span className='title'>Found in: </span>
-        {frontmatter[frontmatterAttr].map((element, index) => [
+        <span className='meta-block-title'>Found in: </span>
+        {chunkedMetadata.map((element, index) => [
           index > 0 && ', ',
           <Link
             key={index}

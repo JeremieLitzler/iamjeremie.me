@@ -39,7 +39,7 @@ export async function getStaticProps({ ...ctx }) {
 
   const categoryPosts = filterBy(
     posts,
-    postAttributes.frontmatter.categoryChunks,
+    postAttributes.frontmatter.category,
     'array',
     category,
   );

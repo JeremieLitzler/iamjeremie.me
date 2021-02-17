@@ -6,14 +6,15 @@
  */
 const getGroup = (post, groupingKey) => {
   const group = post.frontmatter[groupingKey];
-  if (group === undefined || group === null)
-    throw new Error(`
+  if (group === undefined || group === null) {
+    console.warn(`
         <${groupingKey}> doesn't exist. 
         Object contains these attributes: 
         ${Object.keys(post)
           .map((key) => `${key}`)
           .join(', ')}`);
-
+    return false;
+  }
   return group;
 };
 
@@ -28,6 +29,7 @@ const groupBy = (posts, groupingKey) => {
   //console.log(`group elements by ${groupingKey}...`);
   const groups = posts.reduce((output, post) => {
     const group = getGroup(post, groupingKey);
+    if (!group) return output; //current post doesn't have the groupingKey
     if (Array.isArray(group)) {
       console.log('group is array!');
       group.map((value) => {

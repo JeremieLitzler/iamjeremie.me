@@ -4,7 +4,8 @@ subtitle: 'Learn build mobile-friendly websites in a complete course using an in
 author: 'Jeremie Litzler'
 date: '16 Mar 2020'
 hero_image: ../static/images/webresponsive-bootcamp-by-scrimba.png
-category: 'Web development, Reviews'
+category: 'Web Fundamentals, Reviews'
+tag: 'Scrimba, Interactive classroom'
 ---
 
 ## What

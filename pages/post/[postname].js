@@ -11,6 +11,8 @@ import uriPath from '@enums/uriPath';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { irBlack } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import gfm from 'remark-gfm';
+import postAttributes from '@enums/postAttributes';
+import MetaBlock from '@components/MetaBlock';
 
 const renderers = {
   code: ({ language, value }) => {
@@ -33,18 +35,13 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         </div>
         <article>
           <h1 className='post-page-title'>{frontmatter.title}</h1>
-          <p className='categories'>
-            <span className='title'>Found in: </span>
-            {frontmatter.category.split(',').map((category, index) => [
-              index > 0 && ', ',
-              <Link
-                className='category'
-                href={{ pathname: `${uriPath.category}${getSlug(category)}` }}
-              >
-                <a>{category}</a>
-              </Link>,
-            ])}
-          </p>
+          <MetaBlock
+            frontmatter={frontmatter}
+            frontmatterAttr={postAttributes.frontmatter.categoryChunks}
+            blockClass={'categories'}
+            elementClass={'category'}
+            uriRoot={uriPath.category}
+          />
           <hr></hr>
           {frontmatter.hero_image && (
             <img
@@ -60,10 +57,15 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
               source={markdownBody}
             />
           </div>
+          <MetaBlock
+            frontmatter={frontmatter}
+            frontmatterAttr={postAttributes.frontmatter.tagChunks}
+            blockClass={'tags'}
+            elementClass={'tag'}
+            uriRoot={uriPath.tag}
+          />
         </article>
       </Layout>
-      {/*<style jsx>{`
-      `}</style>*/}
     </>
   );
 }

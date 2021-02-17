@@ -30,9 +30,9 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         </main>
         <footer>
           <section>
-            <div class='social-links'>
+            <div className='social-links'>
               <a
-                class='social-link'
+                className='social-link'
                 href='https://facebook.com/MadeByJeremie'
                 rel='noopener noreferrer'
                 target='_blank'
@@ -42,7 +42,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
                 {labels.facebookLinkText}
               </a>
               <a
-                class='social-link'
+                className='social-link'
                 href='https://twitter.com/puzzlout'
                 rel='noopener noreferrer'
                 title={labels.twitterLinkText}
@@ -51,7 +51,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
                 {labels.twitterLinkText}
               </a>
               <a
-                class='social-link'
+                className='social-link'
                 href='https://jeremie-litzler.medium.com/'
                 rel='noopener noreferrer'
                 title={labels.mediumLinkText}
@@ -60,7 +60,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
                 {labels.mediumLinkText}
               </a>
               <a
-                class='social-link'
+                className='social-link'
                 href='https://www.linkedin.com/in/jeremielitzler'
                 rel='noopener noreferrer'
                 title={labels.linkedInLinkText}

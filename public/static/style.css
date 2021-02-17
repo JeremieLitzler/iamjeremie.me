@@ -13,9 +13,12 @@
   --accent-color: #5c196b;
   --hover-color: #5c196b;
   --hover-bg-color: #5c196b;
-  --focus-color: #fffff5;
+  --focus-color: #fffffe;
   --focus-bg-color: #5c196b;
   --link-color: #22296a;
+  --content-link-color: #fffffe;
+  --content-link-bg-color: #2b90d9;
+  --content-link-hover-color: #fffffe;
   --bd-color: #ffda8e;
   --bg-color: #fffffe;
   /*font*/
@@ -97,22 +100,29 @@ a {
   display: inline-block;
   text-align: center;
 }
+.content a {
+  background-color: var(--content-link-bg-color);
+  color: var(--content-link-color);
+  border-radius: var(--interact-bd-rad) 0 var(--interact-bd-rad) 0;
+  padding: 0 2px;
+}
 a:focus,
 a:hover {
   padding: var(--interact-pd);
-  border-top-left-radius: var(--interact-bd-rad);
-  border-bottom-right-radius: var(--interact-bd-rad);
+  border-radius: 0 var(--interact-bd-rad) 0 var(--interact-bd-rad);
   transform: scale(var(--scale-end));
 }
 a:hover {
   color: var(--hover-color);
   /* background-color: var(--hover-bg-color); */
 }
+.content a:hover {
+  color: var(--content-link-hover-color);
+}
 a:focus {
   color: var(--focus-color);
   background-color: var(--focus-bg-color);
 }
-
 img {
   width: 100%;
 }
@@ -171,9 +181,17 @@ footer {
 .post-page-title {
   margin-bottom: 0.5rem;
 }
-.categories {
+.categories,
+.tags {
   text-align: center;
   font-style: italic;
+}
+
+.categories a,
+.tags a,
+.emphasis {
+  font-size: calc(var(--text-size) * 0.8);
+  font-family: consolas;
 }
 
 .netlify-heart img {

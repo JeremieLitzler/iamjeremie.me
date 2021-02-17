@@ -60,8 +60,14 @@ const chunckPostsBy = (posts, keys) => {
   //console.log('chunk post dates...');
   const chunkedPosts = posts.map((post) => {
     for (const key of keys) {
-      if (!post.frontmatter[key]) continue;
+      if (!post.frontmatter[key]) {
+        console.info(
+          `${key} isn't found in frontmatter of ${post.frontmatter.title}`,
+        );
+        continue;
+      }
       const values = post.frontmatter[key].split(metaSeperator);
+      //console.table(key, values);
       post.frontmatter[`${key}Chunks`] = values;
     }
   });

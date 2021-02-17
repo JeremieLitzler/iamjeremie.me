@@ -9,48 +9,37 @@ import groupBy from '@functions/groupBy';
 import uriPath from '@enums/uriPath';
 import postAttributes from '@enums/postAttributes';
 
-const CategoryPage = ({
-  title,
-  description,
-  category,
-  categoryPosts,
-  ...props
-}) => {
+const TagPage = ({ title, description, tag, postsPerTag, ...props }) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
         <h1 className='title'>
-          My articles about <span class='emphasis'>{category}</span>!
+          My articles about <span class='emphasis'>{tag}</span>!
         </h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
-        <PostList posts={categoryPosts} />
+        <PostList posts={postsPerTag} />
       </Layout>
     </>
   );
 };
 
-export default CategoryPage;
+export default TagPage;
 
 export async function getStaticProps({ ...ctx }) {
-  const { category } = ctx.params;
+  const { tag } = ctx.params;
   const posts = ((context) => {
     return getPosts(context);
   })(require.context('../../posts', true, /\.md$/));
 
-  const categoryPosts = filterBy(
-    posts,
-    postAttributes.frontmatter.categoryChunks,
-    'array',
-    category,
-  );
+  const postsPerTag = filterBy(posts, 'tagChunks', 'array', tag);
   const config = await import(`../../siteconfig.json`);
 
   return {
     props: {
       title: config.title,
-      description: `Posts of ${category}`,
-      category,
-      categoryPosts,
+      description: `Posts of ${tag}`,
+      tag,
+      postsPerTag,
     },
   };
 }
@@ -61,10 +50,10 @@ export async function getStaticPaths() {
   })(require.context('../../posts', true, /\.md$/));
 
   const paths = Object.keys(
-    groupBy(posts, postAttributes.frontmatter.categoryChunks),
+    groupBy(posts, postAttributes.frontmatter.tagChunks),
   )
-    .filter((category) => category !== undefined)
-    .map((category) => `${uriPath.category}${getSlug(category)}`);
+    .filter((tag) => tag !== undefined)
+    .map((tag) => `${uriPath.tag}${getSlug(tag)}`);
 
   return {
     paths, // An array of path names, and any params

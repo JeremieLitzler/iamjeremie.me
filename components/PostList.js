@@ -12,9 +12,9 @@ export default function PostList({ posts }) {
       {!sortedPosts && <div>No posts!</div>}
       <ul className='posts'>
         {sortedPosts &&
-          sortedPosts.map((post) => {
+          sortedPosts.map((post, index) => {
             return (
-              <li className='post-link' key={post.slug}>
+              <li key={index} className='post-link' key={post.slug}>
                 <Link href={{ pathname: `${uriPath.post}${post.slug}` }}>
                   <a>{post?.frontmatter?.title}</a>
                 </Link>

@@ -308,6 +308,11 @@ footer {
   padding: calc(var(--header-offset) - 1em) 0;
 }
 
+.social-links a {
+  display: block;
+  margin-bottom: 1em;
+}
+
 /**********************************************************************
 /* Responsive tables for everyone
 /* Force table to not be like tables anymore

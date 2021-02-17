@@ -1,6 +1,13 @@
 import { Helmet } from 'react-helmet';
 import Header from './Header';
 
+const labels = {
+  facebookLinkText: 'Visit my Facebook page',
+  twitterLinkText: 'Follow me on Twitter',
+  linkedInLinkText: 'Review my LinkedIn profile',
+  mediumLinkText: 'Support me on Medium',
+};
+
 export default function Layout({ children, pageTitle, description, ...props }) {
   return (
     <>
@@ -23,6 +30,45 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         </main>
         <footer>
           <section>
+            <div class='social-links'>
+              <a
+                class='social-link'
+                href='https://facebook.com/MadeByJeremie'
+                rel='noopener noreferrer'
+                target='_blank'
+                title={labels.facebookLinkText}
+                aria-label={labels.facebookLinkText}
+              >
+                {labels.facebookLinkText}
+              </a>
+              <a
+                class='social-link'
+                href='https://twitter.com/puzzlout'
+                rel='noopener noreferrer'
+                title={labels.twitterLinkText}
+                aria-label={labels.twitterLinkText}
+              >
+                {labels.twitterLinkText}
+              </a>
+              <a
+                class='social-link'
+                href='https://jeremie-litzler.medium.com/'
+                rel='noopener noreferrer'
+                title={labels.mediumLinkText}
+                aria-label={labels.mediumLinkText}
+              >
+                {labels.mediumLinkText}
+              </a>
+              <a
+                class='social-link'
+                href='https://www.linkedin.com/in/jeremielitzler'
+                rel='noopener noreferrer'
+                title={labels.linkedInLinkText}
+                aria-label={labels.linkedInLinkText}
+              >
+                {labels.linkedInLinkText}
+              </a>
+            </div>
             <p className='fine-print'>
               This site is built {''}
               <a

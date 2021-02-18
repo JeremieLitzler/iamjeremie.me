@@ -32,19 +32,55 @@ const About = ({ title, description, ...props }) => {
           </a>
           .
         </p>
-        <h2>Hobbies</h2>
-        <p>
-          Otherwise, explore my articles. I am sharing more than software
-          related thoughts and experiences. It includes and is not limited to:
-        </p>
+        <h2>What I will write about</h2>
         <ul>
-          <li>Health and diet</li>
-          <li>Living more sustainably in our environnement</li>
+          <li>Web fundamentals</li>
+          <li>Course review I have taken</li>
+          <li>Software product review I have used</li>
+          <li>Web development tips</li>
+          <li>Work organisation</li>
+          <li>Team management</li>
+        </ul>
+        <h2>And also my hobbies</h2>
+        <p>
+          Outside of the software engineering world, I am learning more and more
+          to have a sustainable lifestyle, for me and my family.
+        </p>
+        <p>Also, I will review products we purchase</p>
+        <p>It includes and is not limited to:</p>
+        <ul>
+          <li>Awareness about health and diet</li>
+          <li>Use of energy</li>
           <li>Gardening</li>
           <li>Product reviews that I have purchased once or more</li>
         </ul>
         <h2>What else?</h2>
-        <p></p>
+
+        <p>
+          With my lovely wife and real twin girls, we live in the beautiful
+          Rhone valley in the south of France.
+        </p>
+        <img
+          src='static/images/family.jpg'
+          alt='From left to right: Alyssia, Aurélie, Jérémie, Léyla'
+        />
+        <p>We own 2 sheeps (to mow the grass)</p>
+        <img
+          src='static/images/sheeps.jpg'
+          alt='The twin girls feed the twin sheeps'
+        />
+        <p>And three cats:</p>
+        <img
+          src='static/images/owma.jpg'
+          alt='The mother comfortably sleeping'
+        />
+        <img src='static/images/moustache.jpg' alt='Moustache looks at you' />
+        <img src='static/images/luna.jpg' alt='Luna grins' />
+
+        <p>
+          Finally, I cycle to work daily, with almost 100.000 km travelled since
+          2007.
+        </p>
       </Layout>
     </>
   );

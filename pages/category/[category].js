@@ -20,7 +20,7 @@ const CategoryPage = ({
     <>
       <Layout pageTitle={title} description={description}>
         <h1 className='title'>
-          My articles about <span class='emphasis'>{category}</span>!
+          My articles about <span className='emphasis'>{category}</span>!
         </h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
         <PostList posts={categoryPosts} />
@@ -61,7 +61,7 @@ export async function getStaticPaths() {
   })(require.context('../../posts', true, /\.md$/));
 
   const paths = Object.keys(
-    groupBy(posts, postAttributes.frontmatter.categoryChunks),
+    groupBy(posts, postAttributes.frontmatter.category, true),
   )
     .filter((category) => category !== undefined)
     .map((category) => `${uriPath.category}${getSlug(category)}`);

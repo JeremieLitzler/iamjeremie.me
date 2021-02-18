@@ -5,6 +5,7 @@ import getSlug from '@functions/getSlug';
 import chunkMetada from '@functions/chunkMetadata';
 
 export default function MetaBlock({
+  blockTitle,
   frontmatter,
   frontmatterAttr,
   blockClass,
@@ -12,15 +13,15 @@ export default function MetaBlock({
   uriRoot,
   filter,
 }) {
-  console.log(frontmatter);
+  //console.log(frontmatter);
   const chunkedMetadata = chunkMetada(frontmatter[frontmatterAttr]);
-  console.log(chunkedMetadata);
+  //console.log(chunkedMetadata);
   if (!chunkedMetadata) return <></>;
 
   return (
     <>
       <p className={blockClass}>
-        <span className='meta-block-title'>Found in: </span>
+        <span className='meta-block-title'>{blockTitle}</span>
         {chunkedMetadata.map((element, index) => [
           index > 0 && ', ',
           <Link

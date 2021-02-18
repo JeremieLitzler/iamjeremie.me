@@ -190,10 +190,13 @@ footer {
 .categories a,
 .tags a,
 .emphasis {
-  font-size: calc(var(--text-size) * 0.8);
   font-family: consolas;
 }
 
+.categories a,
+.tags a {
+  font-size: calc(var(--text-size) * 0.8);
+}
 .netlify-heart img {
   height: 2rem;
   width: initial;

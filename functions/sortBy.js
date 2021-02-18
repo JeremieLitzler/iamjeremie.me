@@ -11,7 +11,7 @@ const checkArray = (array, sortingKeys) => {
         element.frontmatter[key] === null
       )
         throw new Error(`
-                  <${key}> doesn't exist. 
+                  <${key}> doesn't exist to sort by. 
                   Object contains these attributes: 
                   ${Object.keys(element.frontmatter)
                     .map((key) => `${key}`)

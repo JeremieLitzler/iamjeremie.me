@@ -10,9 +10,9 @@ export default function GroupedPostList({ groups }) {
           //order years
           .sort((yearN, yearP) => (yearN < yearP ? 1 : -1))
           //render
-          .map((year) => {
+          .map((year, index) => {
             return (
-              <li className='year'>
+              <li key={index} className='year'>
                 <h2>{year}</h2>
                 {!groups[year] && <div>No posts for that year!</div>}
                 <PostList posts={groups[year]} />

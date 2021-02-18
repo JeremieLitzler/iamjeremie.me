@@ -1,5 +1,5 @@
 const chunkMetada = (metada) => {
-  console.log('metadata is: ', metada);
+  //console.log('metadata is: ', metada);
   if (metada === undefined) return false;
 
   const seperator = ',';

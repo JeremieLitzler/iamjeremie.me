@@ -31,7 +31,12 @@ export async function getStaticProps({ ...ctx }) {
     return getPosts(context);
   })(require.context('../../posts', true, /\.md$/));
 
-  const postsPerTag = filterBy(posts, 'tagChunks', 'array', tag);
+  const postsPerTag = filterBy(
+    posts,
+    postAttributes.frontmatter.tag,
+    'array',
+    tag,
+  );
   const config = await import(`../../siteconfig.json`);
 
   return {
@@ -50,7 +55,7 @@ export async function getStaticPaths() {
   })(require.context('../../posts', true, /\.md$/));
 
   const paths = Object.keys(
-    groupBy(posts, postAttributes.frontmatter.tagChunks),
+    groupBy(posts, postAttributes.frontmatter.tag, true),
   )
     .filter((tag) => tag !== undefined)
     .map((tag) => `${uriPath.tag}${getSlug(tag)}`);

@@ -36,6 +36,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         <article>
           <h1 className='post-page-title'>{frontmatter.title}</h1>
           <MetaBlock
+            blockTitle={'Found in: '}
             frontmatter={frontmatter}
             frontmatterAttr={postAttributes.frontmatter.category}
             blockClass={'categories'}
@@ -58,6 +59,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
             />
           </div>
           <MetaBlock
+            blockTitle={'Tagged: '}
             frontmatter={frontmatter}
             frontmatterAttr={postAttributes.frontmatter.tag}
             blockClass={'tags'}

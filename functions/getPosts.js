@@ -1,6 +1,7 @@
 import matter from 'gray-matter';
 import groupBy from '@functions/groupBy';
 import chunkMetada from './chunkMetadata';
+import validatePost from './validatePost';
 
 const dateSeperator = ' ';
 const metaSeperator = ',';
@@ -23,6 +24,7 @@ const parsePostData = (context) => {
       markdownBody: document.content,
       slug,
     };
+    //validatePost(post);
     return post;
   });
 };

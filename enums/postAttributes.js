@@ -3,13 +3,13 @@ const postAttributes = {
     title: 'title',
     subtitle: 'subtitle',
     tag: 'tag',
-    tagChunks: 'tagChunks',
     category: 'category',
-    categoryChunks: 'categoryChunks',
     author: 'author',
     date: 'date',
     hero_image: 'hero_image',
   },
+  mardownBody: 'mardownBody',
+  slug: 'slug',
 };
 
 export default postAttributes;

@@ -1,11 +1,11 @@
 ---
-title: 'JavaScript30 - Course review'
-subtitle: 'Test your JavaScript skills for a month. You will learn something!'
-author: 'Jeremie Litzler'
-date: '26 Jan 2021'
-hero_image: ../static/images/js30-by-wesbos.png
-category: 'Web Fundamentals, Reviews'
-tag: 'Month challenge, Learning JavaScript, Fun projects'
+title: JavaScript30 - Course review
+subtitle: Test your JavaScript skills for a month. You will learn something!
+author: Jeremie Litzler
+date: 26 Jan 2021
+hero_image: '../static/images/js30-by-wesbos.png'
+category: Web Fundamentals, Reviews
+tag: Month challenge, Learning JavaScript, Fun projects
 ---
 
 ## What

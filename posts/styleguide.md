@@ -1,8 +1,8 @@
 ---
-title: 'A style guide of the site (H1)'
-subtitle: 'A set of examples of the various elements in a post and how they will look'
-author: 'Jeremie Litzler'
-date: '28 Jan 2021'
+title: Style guide of the site (H1)
+subtitle: A set of examples of the various elements in a post and how they will look
+author: Jeremie Litzler
+date: 28 Jan 2021
 ---
 
 ## Titre H2

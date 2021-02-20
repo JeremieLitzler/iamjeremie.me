@@ -29,6 +29,24 @@ A bullet list:
   - Item 2.2
 - Item 3
 
+A short quote:
+
+> A short quote of a few words
+
+And a long quote:
+
+> Quoting text multilines.
+>
+> And more of the same quote that is long and allows to test how the text wraps in the width of the container.
+
+And a quote of a quote (double level):
+
+> first level of quote
+>
+> > A double level quote that is long and allows to test how the text wraps in the width of the container.
+>
+> And first level again
+
 Some code:
 
 ```js

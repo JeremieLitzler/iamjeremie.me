@@ -146,6 +146,41 @@ li {
   list-style-type: decimal;
 }
 
+blockquote {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+}
+blockquote blockquote {
+  background-color: #b8b8b8;
+  margin: 1em 2em;
+}
+blockquote::before,
+blockquote::after {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: calc(var(--text-size) * 2);
+}
+blockquote::before {
+  content: '“';
+  padding-left: 0.5em;
+  margin-bottom: -0.75em;
+  margin-top: 5px;
+}
+blockquote::after {
+  content: '”';
+  text-align: right;
+  padding-right: 0.5em;
+  margin-top: -0.5em;
+  height: 1em;
+}
+
+blockquote p {
+  margin: 0 3em;
+}
+
 pre {
   white-space: pre-wrap;
 }

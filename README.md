@@ -49,14 +49,19 @@ You may include an optional hero image in your posts. Put the images in `public/
 
 ```md
 ---
-title: 'Post title'
-author: 'Post author'
-date: '2020-04-27'
-hero_image: ../static/example.jpg
+title: ES6 for everyone - Course review
+subtitle: Learn how JavaScript works today.
+author: Jeremie Litzler
+date: 20 Dec 2020
+hero_image: '../static/images/es6-by-wesbos.png'
+category: Web Fundamentals, Reviews
+tag: Vanilla JS
 ---
 ```
 
-See `demo-post-1.md` for an example of this.
+Read the answer of Robert in [this issue on the gray-matter repo](https://github.com/jonschlinkert/gray-matter/issues/115) about the markdown header.
+
+Checkout the `styleguide.md` for an example of markdown vs html rendered.
 
 ### Dependencies
 

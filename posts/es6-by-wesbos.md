@@ -14,7 +14,7 @@ The course is about learning the new features available in JavaScript (it has be
 
 ## Where
 
-The course can be purchased from [www.es6.io](www.es6.io).
+The course can be purchased from [www.es6.io](https://www.es6.io).
 You just need a good Visual Studio Code or your favorite code editor.
 
 ## Who

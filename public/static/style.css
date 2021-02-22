@@ -352,6 +352,21 @@ footer section {
   margin: 0 auto;
   border-radius: 50em;
 }
+
+.newsletter {
+  width: 50vw;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+.newsletter h3 {
+  text-align: center;
+}
+.newsletter iframe {
+  width: 50vw;
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+}
 /**********************************************************************
 /*  Layout - Footer
 /***********************************************************************/

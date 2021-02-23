@@ -354,7 +354,7 @@ footer section {
 }
 
 .newsletter {
-  width: 50vw;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 1em;
 }
@@ -362,7 +362,7 @@ footer section {
   text-align: center;
 }
 .newsletter iframe {
-  width: 50vw;
+  width: 100%;
   margin: 0 auto;
   border: 0;
   padding: 0;
@@ -459,6 +459,7 @@ td:before {
     display: grid;
     align-items: stretch;
     grid-template-columns: 1em 1fr 1fr 1em;
+    column-gap: 1em;
   }
   .posts li:nth-child(2n + 1) {
     grid-column: 2;

@@ -11,6 +11,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <meta name='Description' content={description}></meta>
         <title>{pageTitle}</title>
         <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link
           href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Open+Sans:wght@400;700&family=Sacramento&display=swap'
           rel='stylesheet'

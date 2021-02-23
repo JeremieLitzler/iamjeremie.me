@@ -24,7 +24,7 @@ const parsePostData = (context) => {
       markdownBody: document.content,
       slug,
     };
-    //validatePost(post);
+    validatePost(post, postFileName);
     return post;
   });
 };

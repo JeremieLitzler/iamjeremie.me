@@ -8,7 +8,7 @@ const postAttributes = {
     date: 'date',
     hero_image: 'hero_image',
   },
-  mardownBody: 'mardownBody',
+  markdownBody: 'markdownBody',
   slug: 'slug',
 };
 

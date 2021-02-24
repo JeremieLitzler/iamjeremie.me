@@ -3,9 +3,11 @@ title: Balance your time. Balance your time.
 subtitle: Life is made a lot of interesting stuff. Don't let any take over.
 author: Jeremie Litzler
 date: 22 Mar 2020
-hero_image: '../static/images/take-the-time.jpg'
+hero_image: '../static/images/take-the-time.jpeg'
 category: Using Energy,Work organisation
 ---
+
+[Support me by reading the story on Medium](https://jeremie-litzler.medium.com/take-the-time-for-your-spouse-take-the-time-for-your-children-take-the-time-for-you-dbd896e37638)!
 
 Take the time for your spouse.
 

@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet';
 import Footer from './Footer';
 import Header from './Header';
 
+import loadable from '@loadable/component';
+const NewsletterSignup = loadable(() => import('./NewsletterSignup'));
+
 export default function Layout({ children, pageTitle, description, ...props }) {
   return (
     <>
@@ -22,10 +25,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <Header />
         <main role='main' className='content'>
           {children}
-          <section className='newsletter'>
-            <h3>Want to read more or never miss an article ?</h3>
-            <iframe src='https://jeremiel.substack.com/embed'></iframe>
-          </section>
+          <NewsletterSignup />
         </main>
         <Footer />
       </section>

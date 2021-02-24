@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
     "node-fetch": "^2.6.1",

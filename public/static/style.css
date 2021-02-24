@@ -93,7 +93,8 @@ hr {
 p {
   letter-spacing: 1px;
 }
-a {
+a,
+button {
   color: var(--link-color);
   transform: scale(var(--scale-start));
   transition: transform var(--scale-time);
@@ -107,7 +108,9 @@ a {
   padding: 0 2px;
 }
 a:focus,
-a:hover {
+a:hover,
+button:focus,
+button:hover {
   padding: var(--interact-pd);
   border-radius: 0 var(--interact-bd-rad) 0 var(--interact-bd-rad);
   transform: scale(var(--scale-end));

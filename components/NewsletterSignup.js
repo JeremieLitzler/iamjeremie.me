@@ -8,7 +8,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           src='https://jeremiel.substack.com/embed'
         ></iframe>
       </section>
-      ;
     </>
   );
 }

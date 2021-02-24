@@ -126,6 +126,17 @@ a:focus {
   color: var(--focus-color);
   background-color: var(--focus-bg-color);
 }
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
 img {
   width: 100%;
 }

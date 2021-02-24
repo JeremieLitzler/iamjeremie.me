@@ -60,26 +60,42 @@ const About = ({ title, description, ...props }) => {
           With my lovely wife and real twin girls, we live in the beautiful
           Rhone valley in the south of France.
         </p>
-        <img
-          src='static/images/family.jpg'
-          alt='From left to right: Alyssia, Aurélie, Jérémie, Léyla'
-        />
+        <figure>
+          <img
+            src='static/images/family.jpg'
+            alt='From left to right: Alyssia, Aurélie, Jérémie, Léyla'
+          />
+          <figcaption>
+            From left to right: Alyssia, Aurélie, Jérémie, Léyla
+          </figcaption>
+        </figure>
         <p>We own 2 sheeps (to mow the grass)</p>
-        <img
-          src='static/images/sheeps.jpg'
-          alt='The twin girls feed the twin sheeps'
-        />
+        <figure>
+          <img
+            src='static/images/sheeps.jpg'
+            alt='The twin girls feed the twin sheeps'
+          />
+          <figcaption>The twin girls feed the twin sheeps</figcaption>
+        </figure>
         <p>And three cats:</p>
-        <img
-          src='static/images/owma.jpg'
-          alt='The mother comfortably sleeping'
-        />
-        <img src='static/images/moustache.jpg' alt='Moustache looks at you' />
-        <img src='static/images/luna.jpg' alt='Luna grins' />
-
+        <figure>
+          <img
+            src='static/images/owma.jpg'
+            alt='The mother comfortably sleeping'
+          />
+          <figcaption>The mother comfortably sleeping</figcaption>
+        </figure>
+        <figure>
+          <img src='static/images/moustache.jpg' alt='Moustache looks at you' />
+          <figcaption>Moustache looks at you</figcaption>
+        </figure>
+        <figure>
+          <img src='static/images/luna.jpg' alt='Luna grins' />
+          <figcaption>Luna grins</figcaption>
+        </figure>
         <p>
-          Finally, I cycle to work daily, with almost 100.000 km travelled since
-          2007.
+          Finally, I am bicycling to work daily, with almost 100.000 km
+          travelled since september 2007. What aobut you?
         </p>
       </Layout>
     </>

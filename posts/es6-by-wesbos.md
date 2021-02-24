@@ -4,7 +4,7 @@ subtitle: Learn how JavaScript works today.
 author: Jeremie Litzler
 date: 20 Dec 2020
 hero_image: '../static/images/es6-by-wesbos.png'
-category: Web Fundamentals, Reviews
+category: Web Fundamentals, Course reviews
 tag: Vanilla JS
 ---
 

@@ -1,0 +1,23 @@
+{
+	// See https://www.youtube.com/watch?v=yjNDBk9cP38
+	// See also https://code.visualstudio.com/docs/editor/userdefinedsnippets
+	"Load new post template in Markdown": {
+		"scope": "markdown",
+		"prefix": "np",
+		"body": [
+			"---", 
+			"title: ${1}",
+			"subtitle: ${2}",
+			"author: ${3}",
+			"date: ${4}",
+			"here_image: \"../static/images/${5}.jpg\"",
+			"category: ${6}", 
+			"tag: ${7}",
+			"---"],
+	},
+	"Pick one category at time": {
+		"scope": "markdown",
+		"prefix": "ncat",
+		"body": "${1|Web development,Guides,Web Fundamentals,Course reviews,Product reviews,Health and Diet,Work organisation,Team management,Using Energy,Gardening|}",
+	}
+}

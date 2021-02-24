@@ -4,7 +4,7 @@ subtitle: Test your JavaScript skills for a month. You will learn something!
 author: Jeremie Litzler
 date: 26 Jan 2021
 hero_image: '../static/images/js30-by-wesbos.png'
-category: Web Fundamentals, Reviews
+category: Web Fundamentals, Course reviews
 tag: Month challenge, Learning JavaScript, Fun projects
 ---
 

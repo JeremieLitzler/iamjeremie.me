@@ -4,7 +4,7 @@ subtitle: Learn build mobile-friendly websites in a complete course using an int
 author: Jeremie Litzler
 date: 16 Mar 2020
 hero_image: '../static/images/webresponsive-bootcamp-by-scrimba.png'
-category: Web Fundamentals, Reviews
+category: Web Fundamentals, Course reviews
 tag: Scrimba, Interactive classroom
 ---
 

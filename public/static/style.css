@@ -22,11 +22,11 @@
   --bd-color: #ffda8e;
   --bg-color: #fffffe;
   /*font*/
-  --text-size: 1.1875rem;
-  --h1: calc(var(--text-size) * 1.6);
-  --h2: calc(var(--text-size) * 1.4);
-  --h3: calc(var(--text-size) * 1.25);
-  --h4: calc(var(--text-size) * 1.125);
+  --text-size: 1.1rem;
+  --h1: calc(var(--text-size) * 1.8);
+  --h2: calc(var(--text-size) * 1.6);
+  --h3: calc(var(--text-size) * 1.4);
+  --h4: calc(var(--text-size) * 1.2);
   --h5: calc(var(--text-size) * 1.05);
   --nav-link-size: calc(var(--text-size) * 1.125);
   /*hover and focus*/
@@ -462,7 +462,7 @@ td:before {
 @media (min-width: 36em) {
   .layout {
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) minmax(0, 30em) minmax(1em, 1fr);
+    grid-template-columns: minmax(1em, 1fr) minmax(0, 40em) minmax(1em, 1fr);
     grid-template-areas:
       '. header .'
       '. main .'

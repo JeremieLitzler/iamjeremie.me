@@ -9,7 +9,9 @@ const Index = ({ years, title, description, ...props }) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
-        <h1 className='title'>My articles!</h1>
+        <h1 className='title home-title'>
+          Welcome ! I hope you will enjoy what I have to share.
+        </h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
         <GroupedPostList groups={years} />
       </Layout>

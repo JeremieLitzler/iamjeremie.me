@@ -16,17 +16,17 @@
   --focus-color: #fffffe;
   --focus-bg-color: #5c196b;
   --link-color: #22296a;
-  --content-link-color: #fffffe;
-  --content-link-bg-color: #055c9c;
-  --content-link-hover-color: #fffffe;
+  --content-link-color: #055c9c;
+  --content-link-focus-color: #ffda8e;
+  --content-link-hover-color: #5c196b;
   --bd-color: #ffda8e;
   --bg-color: #fffffe;
   /*font*/
   --text-size: 1.1875rem;
-  --h1: calc(var(--text-size) * 1.8);
-  --h2: calc(var(--text-size) * 1.6);
-  --h3: calc(var(--text-size) * 1.4);
-  --h4: calc(var(--text-size) * 1.2);
+  --h1: calc(var(--text-size) * 1.6);
+  --h2: calc(var(--text-size) * 1.4);
+  --h3: calc(var(--text-size) * 1.25);
+  --h4: calc(var(--text-size) * 1.125);
   --h5: calc(var(--text-size) * 1.05);
   --nav-link-size: calc(var(--text-size) * 1.125);
   /*hover and focus*/
@@ -102,7 +102,6 @@ button {
   text-align: center;
 }
 .content a {
-  background-color: var(--content-link-bg-color);
   color: var(--content-link-color);
   border-radius: var(--interact-bd-rad) 0 var(--interact-bd-rad) 0;
   padding: 0 2px;
@@ -121,6 +120,9 @@ a:hover {
 }
 .content a:hover {
   color: var(--content-link-hover-color);
+}
+.content a:focus {
+  color: var(--content-link-focus-color);
 }
 a:focus {
   color: var(--focus-color);
@@ -304,6 +306,27 @@ nav {
 /**********************************************************************
 /*  Layout - Content
 /***********************************************************************/
+.home-title {
+  margin-bottom: 0;
+}
+.year > h2 {
+  margin-top: 2em;
+}
+.rich-post {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 2em; */
+}
+
+.rich-post:last-child hr {
+  display: none;
+}
+
+.continue-reading {
+  text-align: left;
+  margin-top: 1em;
+  place-self: flex-end;
+}
 
 del {
   padding: 0 0.25em;
@@ -372,8 +395,9 @@ footer section {
   margin: 0 auto;
   padding-bottom: 1em;
 }
-.newsletter h3 {
+.newsletter h2 {
   text-align: center;
+  margin-top: 2em;
 }
 .newsletter iframe {
   width: 100%;

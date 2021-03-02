@@ -6,10 +6,10 @@ export default function Header() {
       <header className='header'>
         <nav className='nav' role='navigation' aria-label='main navigation'>
           <Link href='/about'>
-            <a className='nav-link'>Who am I</a>
+            <a className='nav-link'>Author</a>
           </Link>
           <Link href='/'>
-            <a className='nav-link'>Articles</a>
+            <a className='nav-link'>Read</a>
           </Link>
         </nav>
       </header>

@@ -19,7 +19,6 @@ export default function PostList({ posts }) {
             return (
               <article key={index} className='rich-post' key={post.slug}>
                 <RichPostSummary post={post} />
-                <hr />
               </article>
             );
           })}

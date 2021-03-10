@@ -9,6 +9,9 @@ export default function RichPostSummary({ post }) {
 
   return (
     <>
+      <span className='post-date'>
+        {post.frontmatter[postAttributes.frontmatter.date]} {` `}
+      </span>
       <Link href={{ pathname: `${uriPath.post}${post.slug}` }}>
         <a>
           {post.frontmatter[postAttributes.frontmatter.hero_image] && (

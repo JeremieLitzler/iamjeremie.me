@@ -2,6 +2,7 @@
 title: Style guide of the site (H1)
 subtitle: A set of examples of the various elements in a post and how they will look
 author: Jeremie Litzler
+hero_image: '../static/images/28-01-2021-styleguide.jpg'
 date: 28 Jan 2021
 category: Web fundamentals
 ---
@@ -81,3 +82,5 @@ export default uniquePropHOC(['time', 'seconds'])(Expire);
 No table supported yet...
 
 Check out the source [on GitHub](https://github.com/JeremieLitzler/iamjeremie.me/blob/master/posts/styleguide.md).
+
+Photo by [Jan Losert](https://unsplash.com/@janlosert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on Unsplash.

@@ -5,7 +5,13 @@ import Header from './Header';
 import loadable from '@loadable/component';
 const NewsletterSignup = loadable(() => import('./NewsletterSignup'));
 
-export default function Layout({ children, pageTitle, description, ...props }) {
+export default function Layout({
+  children,
+  pageTitle,
+  description,
+  showHero = false,
+  ...props
+}) {
   return (
     <>
       <Helmet htmlAttributes={{ lang: 'en' }}>
@@ -22,14 +28,12 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         />
         {/* <link rel='stylesheet' href='/static/style.css' /> */}
       </Helmet>
-      <section className='layout'>
-        <Header />
-        <main role='main' className='content'>
-          {children}
-          <NewsletterSignup />
-        </main>
-        <Footer />
-      </section>
+      <Header />
+      <main role='main' className='content layout'>
+        {children}
+        <NewsletterSignup />
+      </main>
+      <Footer />
       {/* <script src='/static/menu-scroll.js'></script> */}
     </>
   );

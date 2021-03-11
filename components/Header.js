@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <>
-      <header className='header'>
+      <header className='header layout'>
         <nav className='nav' role='navigation' aria-label='main navigation'>
           <Link href='/about'>
             <a className='nav-link'>Author</a>

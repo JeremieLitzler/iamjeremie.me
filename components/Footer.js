@@ -10,7 +10,7 @@ const labels = {
 export default function Footer() {
   return (
     <>
-      <footer>
+      <footer className='layout'>
         <section>
           <div className='social-links'>
             <a

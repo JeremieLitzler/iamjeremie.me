@@ -379,6 +379,11 @@ footer section {
   /* padding-top: var(--header-offset); */
 }
 
+.image-cropped-wrapper {
+  height: 5em;
+  overflow: hidden;
+}
+
 .years,
 .posts {
   margin: 0;
@@ -478,12 +483,11 @@ td:before {
   .layout {
     display: grid;
     grid-template-columns: minmax(1em, 1fr) minmax(0, 40em) minmax(1em, 1fr);
-    grid-template-areas:
-      '. header .'
-      '. main .'
-      '. footer .';
   }
 
+  .layout > * {
+    grid-column: 2 / -2;
+  }
   header {
     grid-area: header;
   }
@@ -529,5 +533,8 @@ td:before {
     justify-self: center;
     width: 20em;
     margin: 0 auto;
+  }
+  .image-cropped-wrapper {
+    height: 12em;
   }
 }

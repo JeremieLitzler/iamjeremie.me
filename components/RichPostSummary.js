@@ -15,11 +15,13 @@ export default function RichPostSummary({ post }) {
       <Link href={{ pathname: `${uriPath.post}${post.slug}` }}>
         <a>
           {post.frontmatter[postAttributes.frontmatter.hero_image] && (
-            <img
-              src={post.frontmatter[postAttributes.frontmatter.hero_image]}
-              className='hero'
-              alt={post.frontmatter[postAttributes.frontmatter.title]}
-            />
+            <div className='image-cropped-wrapper'>
+              <img
+                src={post.frontmatter[postAttributes.frontmatter.hero_image]}
+                className='hero'
+                alt={post.frontmatter[postAttributes.frontmatter.title]}
+              />
+            </div>
           )}
           <h2 className='title'>{post?.frontmatter?.title}</h2>
         </a>

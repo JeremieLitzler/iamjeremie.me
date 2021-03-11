@@ -1,9 +1,7 @@
 import { Helmet } from 'react-helmet';
+import Contents from './Contents';
 import Footer from './Footer';
 import Header from './Header';
-
-import loadable from '@loadable/component';
-const NewsletterSignup = loadable(() => import('./NewsletterSignup'));
 
 export default function Layout({
   children,
@@ -29,10 +27,7 @@ export default function Layout({
         {/* <link rel='stylesheet' href='/static/style.css' /> */}
       </Helmet>
       <Header />
-      <main role='main' className='content layout'>
-        {children}
-        <NewsletterSignup />
-      </main>
+      <Contents children={children} />
       <Footer />
       {/* <script src='/static/menu-scroll.js'></script> */}
     </>

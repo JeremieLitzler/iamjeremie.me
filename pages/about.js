@@ -3,7 +3,10 @@ import Layout from '@components/Layout';
 const About = ({ title, description, ...props }) => {
   return (
     <>
-      <Layout pageTitle={`${title} | The Who`} description={description}>
+      <Layout
+        pageTitle={`${title} | Story`}
+        description={'Everyone has a story. This is mine. So far...'}
+      >
         <h1 className='title title-about'>Hello, I am Jeremie.</h1>
         <img
           className='profile-pic'

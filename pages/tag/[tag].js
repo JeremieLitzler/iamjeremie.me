@@ -12,9 +12,9 @@ import postAttributes from '@enums/postAttributes';
 const TagPage = ({ title, description, tag, postsPerTag, ...props }) => {
   return (
     <>
-      <Layout pageTitle={title} description={description}>
+      <Layout pageTitle={`${title} | Tag "${tag}"`} description={description}>
         <h1 className='title'>
-          My articles about <span class='emphasis'>{tag}</span>!
+          My articles tagged: <span className='emphasis'>{tag}</span>
         </h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
         <PostList posts={postsPerTag} />
@@ -42,7 +42,7 @@ export async function getStaticProps({ ...ctx }) {
   return {
     props: {
       title: config.title,
-      description: `Posts of ${tag}`,
+      description: `Articles tagget with ${tag}`,
       tag,
       postsPerTag,
     },

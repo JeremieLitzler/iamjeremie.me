@@ -8,7 +8,8 @@ import groupBy from '@functions/groupBy';
 const Index = ({ years, title, description, ...props }) => {
   return (
     <>
-      <Layout pageTitle={title} description={description}>
+      <Layout pageTitle={`${title} | My articles`} description={description}>
+        <h1 className='title index-title'>My articles</h1>
         {/* The parameter is the attribute value to use where the component is used.*/}
         <GroupedPostList groups={years} />
       </Layout>

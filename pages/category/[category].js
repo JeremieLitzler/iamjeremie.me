@@ -18,7 +18,10 @@ const CategoryPage = ({
 }) => {
   return (
     <>
-      <Layout pageTitle={title} description={description}>
+      <Layout
+        pageTitle={`${title} | Category "${category}"`}
+        description={description}
+      >
         <h1 className='title'>
           My articles about <span className='emphasis'>{category}</span>!
         </h1>
@@ -48,7 +51,7 @@ export async function getStaticProps({ ...ctx }) {
   return {
     props: {
       title: config.title,
-      description: `Posts of ${category}`,
+      description: `My articles in ${category}`,
       category,
       categoryPosts,
     },

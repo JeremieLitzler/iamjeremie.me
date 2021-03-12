@@ -34,7 +34,7 @@ const groupBy = (posts, groupingKey, isCsv = false) => {
     if (!group) return output; //current post doesn't have the groupingKey
     if (isCsv) group = group.split(',');
     if (Array.isArray(group)) {
-      console.log('group is array!');
+      //console.log('group is array!');
       group.map((value) => {
         output[value] = output[value] || [];
         output[value].push(post);

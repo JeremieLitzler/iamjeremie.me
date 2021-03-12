@@ -221,7 +221,7 @@ footer {
   margin-top: 1em;
 }
 .title {
-  margin: 1em 0;
+  margin: 1em 0 0.5em 0;
 }
 .title-about {
   align-self: center;
@@ -231,9 +231,6 @@ footer {
   font-family: console;
   font-size: calc(var(--text-size) * 0.8);
   margin-bottom: 1em;
-}
-.post-page-title {
-  margin-bottom: 0.5rem;
 }
 .categories,
 .tags {
@@ -313,9 +310,7 @@ nav {
   background-image: url(public/static/images/hero.jpg);
   background-size: cover;
 } */
-.home-title {
-  margin-bottom: 0;
-}
+
 .year > h2 {
   margin-bottom: 1em;
 }
@@ -330,7 +325,6 @@ nav {
 }
 .rich-post .title {
   margin-top: 0;
-  margin-bottom: 0.25em;
 }
 
 .rich-post:last-child hr {

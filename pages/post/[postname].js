@@ -37,7 +37,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
           </Link>
         </div>
         <article>
-          <h1 className='post-page-title'>{frontmatter.title}</h1>
+          <h1 className='title post-title'>{frontmatter.title}</h1>
           <MetaBlock
             blockTitle={'Found in: '}
             frontmatter={frontmatter}

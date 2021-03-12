@@ -21,7 +21,7 @@ export default function Layout({
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link rel='preconnect' href='https://cdn.substack.com' />
         <link
-          href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Open+Sans:wght@400;700&family=Sacramento&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=RocknRoll+One&family=Sacramento&display=swap'
           rel='stylesheet'
         />
         {/* <link rel='stylesheet' href='/static/style.css' /> */}
